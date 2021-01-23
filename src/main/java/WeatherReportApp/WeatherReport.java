@@ -32,7 +32,7 @@ public class WeatherReport {
                 //todo
             }
             case "4": {
-                // todo
+                System.out.println("Allright! Bye!");
 
             }
 
