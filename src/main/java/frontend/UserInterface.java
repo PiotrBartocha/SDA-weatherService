@@ -1,5 +1,7 @@
 package frontend;
 
+import backend.Location;
+
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -56,8 +58,38 @@ public class UserInterface {
         return actionID;
     }
 
-    private static void addNewLocation() {
+    private static Location addNewLocation() {
+        String name, latitude, longitude, country, region;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please put the name of a city you want to add:");
+        name = scanner.nextLine();
+        if (name.equals("")) {
+            do {
+                System.out.println("City name cannot be empty!");
+                System.out.println("Please put the name of a city you want to add:");
+                name = scanner.nextLine();
+            } while (name.equals(""));
+        }
+        System.out.println("Please put the city's longitude:");
+        longitude = scanner.nextLine();
+        System.out.println("Please provide the city's latitude:");
+        latitude = scanner.nextLine();
+        System.out.println("Please put the name of the country the city is in:");
+        country = scanner.nextLine();
+        if (country.equals("")) {
+            do {
+                System.out.println("Country name cannot be empty!");
+                System.out.println("Please put the name of the country the city is in:");
+                country = scanner.nextLine();
+            } while (country.equals(""));
+        }
+        System.out.println("Please put the name of the region the city is in:");
+        region = scanner.nextLine();
+
+        Location
+        return new Location();
     }
+
 
     private static void displayAllLocations() {
     }
