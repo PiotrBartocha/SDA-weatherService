@@ -1,16 +1,16 @@
-package WeatherReportApp;
+package frontend;
 
-import java.util.InputMismatchException; // todo unnecessary import ctrl + alt + O
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class WeatherReport {
+public class UserInterface {
     public static void main(String[] args) throws InterruptedException {
+        System.out.println("Welcome to WeatherReport!");
+        System.out.println();
+
         while (true) {
-            System.out.println("Welcome to WeatherReport!");
-            System.out.println();
             TimeUnit.SECONDS.sleep(1);
-            System.out.println("You can choose one of the following actions");
+            System.out.println("You can now choose one of the following actions");
             TimeUnit.SECONDS.sleep(1);
             System.out.println();
             System.out.println("1. Add a new city to the report");
