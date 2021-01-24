@@ -1,6 +1,6 @@
 package WeatherReportApp;
 
-import java.util.InputMismatchException;
+import java.util.InputMismatchException; // todo unnecessary import ctrl + alt + O
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -22,23 +22,19 @@ public class WeatherReport {
 
         switch (action) {
             case "1": {
-                //todo
+                //todo add break;
             }
             case "2": {
-                //todo
+                //todo add break;
             }
 
             case "3": {
-                //todo
+                //todo add break;
             }
             case "4": {
                 System.out.println("Allright! Bye!");
-
             }
-
         }
-
-
     }
 
 
@@ -49,13 +45,10 @@ public class WeatherReport {
         do {
             System.out.println("Please choose the action number");
             actionID = scanner.nextLine();
-        } while (!actionID.equals("1") && !actionID.equals("2") && !actionID.equals("3") && !actionID.equals("4"));
-
+        } while (!actionID.equals("1") && !actionID.equals("2") && !actionID.equals("3") && !actionID.equals("4")); // todo List.of(1,2,3,4).contains(...)
 
         return actionID;
     }
-
-
 }
 
 
