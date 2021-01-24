@@ -1,11 +1,10 @@
 package frontend;
 
-import backend.Location;
-
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class UserInterface {
+
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Welcome to WeatherReport!");
         System.out.println();
@@ -26,21 +25,16 @@ public class UserInterface {
             switch (action) {
                 case "1":
                     addNewLocation();
-                    break;//todo
-
+                    break;
                 case "2":
                     displayAllLocations();
-                    break;//todo
-
-
+                    break;
                 case "3":
                     getDataFromWeatherServices();
-                    break;//todo
-
+                    break;
                 case "4":
                     System.out.println("Allright! Bye!");
                     return;
-
             }
         }
     }
@@ -53,12 +47,12 @@ public class UserInterface {
         do {
             System.out.println("Please choose the action number");
             actionID = scanner.nextLine();
-        } while (!actionID.equals("1") && !actionID.equals("2") && !actionID.equals("3") && !actionID.equals("4")); // todo List.of(1,2,3,4).contains(...)
+        } while (!actionID.equals("1") && !actionID.equals("2") && !actionID.equals("3") && !actionID.equals("4"));
 
         return actionID;
     }
 
-    private static Location addNewLocation() {
+    private static void addNewLocation() {
         String name, latitude, longitude, country, region;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please put the name of a city you want to add:");
@@ -76,18 +70,15 @@ public class UserInterface {
         latitude = scanner.nextLine();
         System.out.println("Please put the name of the country the city is in:");
         country = scanner.nextLine();
-        if (country.equals("")) {
+        if (country.isBlank()) {
             do {
                 System.out.println("Country name cannot be empty!");
                 System.out.println("Please put the name of the country the city is in:");
                 country = scanner.nextLine();
-            } while (country.equals(""));
+            } while (country.isBlank());
         }
         System.out.println("Please put the name of the region the city is in:");
         region = scanner.nextLine();
-
-        Location
-        return new Location();
     }
 
 
