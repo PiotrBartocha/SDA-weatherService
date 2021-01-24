@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class LocationRepository {
+
     public Location saveLocation(Location location) {
         SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
         Session session = sessionFactory.openSession();
@@ -16,9 +17,7 @@ public class LocationRepository {
 
         transaction.commit();
         session.close();
+
         return location;
-
     }
-
-
 }

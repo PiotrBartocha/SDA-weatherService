@@ -1,7 +1,5 @@
 package backend;
 
-import java.util.List;
-
 public class LocationService {
     private final LocationRepository locationRepository;
 
@@ -9,10 +7,21 @@ public class LocationService {
         this.locationRepository = locationRepository;
     }
 
-    public Location createNewLocation(String name,String latitude,String longitude,String country,String region){
-        Location location = new Location(name,latitude,longitude,country,region);
+    public Location createNewLocation(String name, String latitude, String longitude, String country, String region) {
+        // todo do a validation
+        float latitudeFloat;
+
+        try {
+            latitudeFloat = Float.parseFloat(latitude);
+        } catch (NumberFormatException e) {
+            throw new RuntimeException("Zły format wartości latitude: " + latitude);
+        }
+
+        if (latitudeFloat > 90) {
+            throw new RuntimeException("Wartość latitude nie powinna być większa niż 90");
+        }
+
+        Location location = new Location(name, latitude, longitude, country, region);
         return locationRepository.saveLocation(location);
     }
-
-
 }
