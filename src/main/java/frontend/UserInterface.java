@@ -1,9 +1,22 @@
 package frontend;
 
+import backend.LocationController;
+import backend.LocationRepository;
+import backend.LocationService;
+
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class UserInterface {
+
+    private static final LocationController locationController;
+
+    static {
+        LocationRepository locationRepository = new LocationRepository();
+        LocationService locationService = new LocationService(locationRepository);
+        locationController = new LocationController(locationService);
+
+    }
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Welcome to WeatherReport!");
@@ -54,6 +67,7 @@ public class UserInterface {
 
     private static void addNewLocation() {
         String name, latitude, longitude, country, region;
+        String response;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please put the name of a city you want to add:");
         name = scanner.nextLine();
@@ -79,8 +93,8 @@ public class UserInterface {
         }
         System.out.println("Please put the name of the region the city is in:");
         region = scanner.nextLine();
-
-        System.out.println("City has been successfully added!");
+        response = locationController.createNewLocation(name, latitude, longitude, country, region);
+        System.out.println("City has been successfully added!" + response);
     }
 
 
