@@ -79,6 +79,8 @@ public class UserInterface {
         }
         System.out.println("Please put the name of the region the city is in:");
         region = scanner.nextLine();
+
+        System.out.println("City has been successfully added!");
     }
 
 
