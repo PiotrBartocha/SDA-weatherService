@@ -1,4 +1,7 @@
-package com.sda.backend;
+package com.sda.weather.backend.location;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Data
+@NoArgsConstructor
 public class Location {
 
     @Id
@@ -17,8 +22,6 @@ public class Location {
     private String country;
     private String region;
 
-    public Location() {
-    }
 
     public Location(String name, String latitude, String longitude, String country, String region) {
         this.name = name;
@@ -26,26 +29,6 @@ public class Location {
         this.longitude = longitude;
         this.country = country;
         this.region = region;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public String getRegion() {
-        return region;
     }
 
     @Override

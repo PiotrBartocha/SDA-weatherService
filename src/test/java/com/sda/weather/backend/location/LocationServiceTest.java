@@ -1,4 +1,4 @@
-package com.sda.backend;
+package com.sda.weather.backend.location;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

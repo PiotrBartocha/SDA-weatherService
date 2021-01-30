@@ -1,8 +1,8 @@
-package com.sda.frontend;
+package com.sda.weather.frontend;
 
-import com.sda.backend.LocationController;
-import com.sda.backend.LocationRepositoryImpl;
-import com.sda.backend.LocationService;
+import com.sda.weather.backend.location.LocationController;
+import com.sda.weather.backend.location.LocationRepositoryImpl;
+import com.sda.weather.backend.location.LocationService;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
