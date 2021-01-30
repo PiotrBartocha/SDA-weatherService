@@ -1,5 +1,7 @@
 package com.sda.weather.backend.location;
 
+import java.util.List;
+
 public class LocationService {
     private final LocationRepository locationRepository;
 
@@ -44,5 +46,8 @@ public class LocationService {
 
         Location location = new Location(name, latitude, longitude, country, region);
         return locationRepository.saveLocation(location);
+    }
+    public List<Location> displayAllLocations(){
+        return locationRepository.displayAllLocations();
     }
 }
