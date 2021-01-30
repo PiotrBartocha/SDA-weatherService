@@ -99,6 +99,10 @@ public class UserInterface {
 
 
     private static void displayAllLocations() {
+        String response = locationController.displayAllLocations();
+        System.out.println("Your saved cities: "+ response);
+        System.out.println();
+
     }
 
     private static void getDataFromWeatherServices() {
