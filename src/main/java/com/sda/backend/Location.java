@@ -1,4 +1,4 @@
-package backend;
+package com.sda.backend;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,6 +26,26 @@ public class Location {
         this.longitude = longitude;
         this.country = country;
         this.region = region;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getRegion() {
+        return region;
     }
 
     @Override

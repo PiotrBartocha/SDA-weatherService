@@ -1,4 +1,4 @@
-package backend;
+package com.sda.backend;
 
 public class LocationService {
     private final LocationRepository locationRepository;
@@ -7,7 +7,7 @@ public class LocationService {
         this.locationRepository = locationRepository;
     }
 
-    public Location createNewLocation(String name, String latitude, String longitude, String country, String region) {
+    Location createNewLocation(String name, String latitude, String longitude, String country, String region) {
         // todo do a validation
         float latitudeFloat;
         float longitudeFloat;
@@ -41,9 +41,9 @@ public class LocationService {
         if (country.length() > 30) {
             throw new RuntimeException("Country name cannot be longer than 20 characters!");
         }
-        if (!name.matches("[a-zA-Z\\s\\-]")) {
-            throw new RuntimeException("Name contains illegal characters");
-        }
+        //        if (!name.matches("[a-zA-Z\\s\\-]")) {
+        //            throw new RuntimeException("Name contains illegal characters");
+        //        }
 
         Location location = new Location(name, latitude, longitude, country, region);
         return locationRepository.saveLocation(location);

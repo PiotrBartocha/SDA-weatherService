@@ -1,13 +1,12 @@
-package backend;
+package com.sda.backend;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import java.util.List;
+public class LocationRepositoryImpl implements LocationRepository {
 
-public class LocationRepository {
-
+    @Override
     public Location saveLocation(Location location) {
         SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
         Session session = sessionFactory.openSession();

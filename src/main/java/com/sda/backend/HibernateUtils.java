@@ -1,4 +1,4 @@
-package backend;
+package com.sda.backend;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;

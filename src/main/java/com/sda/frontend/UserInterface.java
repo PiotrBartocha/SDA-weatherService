@@ -1,8 +1,8 @@
-package frontend;
+package com.sda.frontend;
 
-import backend.LocationController;
-import backend.LocationRepository;
-import backend.LocationService;
+import com.sda.backend.LocationController;
+import com.sda.backend.LocationRepositoryImpl;
+import com.sda.backend.LocationService;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +12,7 @@ public class UserInterface {
     private static final LocationController locationController;
 
     static {
-        LocationRepository locationRepository = new LocationRepository();
+        LocationRepositoryImpl locationRepository = new LocationRepositoryImpl();
         LocationService locationService = new LocationService(locationRepository);
         locationController = new LocationController(locationService);
 

@@ -1,4 +1,4 @@
-package backend;
+package com.sda.backend;
 
 public class LocationController {
 
