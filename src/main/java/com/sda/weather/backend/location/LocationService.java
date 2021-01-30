@@ -1,4 +1,4 @@
-package com.sda.backend;
+package com.sda.weather.backend.location;
 
 public class LocationService {
     private final LocationRepository locationRepository;
@@ -8,7 +8,7 @@ public class LocationService {
     }
 
     Location createNewLocation(String name, String latitude, String longitude, String country, String region) {
-        // todo do a validation
+
         float latitudeFloat;
         float longitudeFloat;
         try {
@@ -29,10 +29,10 @@ public class LocationService {
         if (longitudeFloat > 180) {
             throw new RuntimeException("Longitude cannot be higher than 180!");
         }
-        if (name.equals(null) || name.isBlank()) {
+        if (name == null || name.isBlank()) {
             throw new RuntimeException("Name cannot be empty!");
         }
-        if (country.equals(null) || country.isBlank()) {
+        if (country ==null || country.isBlank()) {
             throw new RuntimeException("Country name cannot be empty");
         }
         if (name.length() > 30) {
@@ -41,9 +41,6 @@ public class LocationService {
         if (country.length() > 30) {
             throw new RuntimeException("Country name cannot be longer than 20 characters!");
         }
-        //        if (!name.matches("[a-zA-Z\\s\\-]")) {
-        //            throw new RuntimeException("Name contains illegal characters");
-        //        }
 
         Location location = new Location(name, latitude, longitude, country, region);
         return locationRepository.saveLocation(location);

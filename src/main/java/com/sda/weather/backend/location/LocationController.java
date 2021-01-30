@@ -1,4 +1,4 @@
-package com.sda.backend;
+package com.sda.weather.backend.location;
 
 public class LocationController {
 

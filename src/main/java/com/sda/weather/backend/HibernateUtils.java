@@ -1,4 +1,4 @@
-package com.sda.backend;
+package com.sda.weather.backend;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;

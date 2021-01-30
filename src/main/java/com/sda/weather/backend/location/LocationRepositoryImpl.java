@@ -1,5 +1,6 @@
-package com.sda.backend;
+package com.sda.weather.backend.location;
 
+import com.sda.weather.backend.HibernateUtils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
