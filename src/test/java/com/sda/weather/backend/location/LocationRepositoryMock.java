@@ -1,5 +1,6 @@
 package com.sda.weather.backend.location;
 
+import java.util.Collections;
 import java.util.List;
 
 public class LocationRepositoryMock implements LocationRepository {
@@ -11,7 +12,7 @@ public class LocationRepositoryMock implements LocationRepository {
 
     @Override
     public List<Location> displayAllLocations() {
-        return null;
+        return Collections.emptyList();
     }
 }
 

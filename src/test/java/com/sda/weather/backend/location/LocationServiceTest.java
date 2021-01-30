@@ -52,4 +52,6 @@ public class LocationServiceTest {
         // then
         assertThat(result).isInstanceOf(RuntimeException.class);
     }
+
+    // todo add new tests
 }

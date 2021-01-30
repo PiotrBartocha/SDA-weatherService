@@ -22,25 +22,12 @@ public class Location {
     private String country;
     private String region;
 
-
     public Location(String name, String latitude, String longitude, String country, String region) {
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
         this.country = country;
         this.region = region;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", latitude='" + latitude + '\'' +
-                ", longitude='" + longitude + '\'' +
-                ", country='" + country + '\'' +
-                ", region='" + region + '\'' +
-                '}';
     }
 }
 

@@ -1,13 +1,15 @@
 package com.sda.weather.backend.location;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 import java.util.List;
 
+@RequiredArgsConstructor
 public class LocationService {
-    private final LocationRepository locationRepository;
 
-    public LocationService(LocationRepository locationRepository) {
-        this.locationRepository = locationRepository;
-    }
+    private final LocationRepository locationRepository;
 
     Location createNewLocation(String name, String latitude, String longitude, String country, String region) {
 
@@ -47,6 +49,7 @@ public class LocationService {
         Location location = new Location(name, latitude, longitude, country, region);
         return locationRepository.saveLocation(location);
     }
+
     public List<Location> displayAllLocations(){
         return locationRepository.displayAllLocations();
     }
